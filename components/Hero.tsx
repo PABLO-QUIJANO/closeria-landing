@@ -13,7 +13,8 @@ function WhatsAppIcon() {
 
 export default function Hero() {
   // Formateamos el número para el enlace wa.me (solo dígitos)
-  const whatsappHref = `https://wa.me/${DEMO_PHONE.replace(/\D/g, "")}`;
+  const waMessage = encodeURIComponent("Hola, me gustaría probar la demo.");
+  const whatsappHref = `https://wa.me/${DEMO_PHONE.replace(/\D/g, "")}?text=${waMessage}`;
 
   return (
     <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-green-900 text-white min-h-screen flex items-center overflow-hidden">
@@ -62,14 +63,6 @@ export default function Hero() {
             >
               <WhatsAppIcon />
               Probar demo ahora
-            </a>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all"
-            >
-              Ver demo presencial →
             </a>
           </div>
 
