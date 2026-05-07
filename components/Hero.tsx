@@ -1,5 +1,5 @@
 // Variables personalizables por cliente — cambiar solo estos dos valores
-const DEMO_PHONE = process.env.NEXT_PUBLIC_DEMO_PHONE ?? "+34600000000";
+const DEMO_PHONE = process.env.NEXT_PUBLIC_DEMO_PHONE ?? "+34601160323";
 const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "#";
 
 // Icono de WhatsApp inline para evitar dependencias externas

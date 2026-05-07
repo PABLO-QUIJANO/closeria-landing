@@ -1,6 +1,6 @@
 // Variables configurables por cliente
 const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "#";
-const DEMO_PHONE = process.env.NEXT_PUBLIC_DEMO_PHONE ?? "+34600000000";
+const DEMO_PHONE = process.env.NEXT_PUBLIC_DEMO_PHONE ?? "+34601160323";
 
 // Definición de planes de precios
 const PLANES = [
@@ -55,7 +55,8 @@ function CheckIcon({ destacado }: { destacado: boolean }) {
 }
 
 export default function CTAFinal() {
-  const whatsappHref = `https://wa.me/${DEMO_PHONE.replace(/\D/g, "")}`;
+  const waMsg = encodeURIComponent("Hola, me gustaría reservar una demo de CloserIA.");
+  const whatsappHref = `https://wa.me/${DEMO_PHONE.replace(/\D/g, "")}?text=${waMsg}`;
 
   return (
     <section id="precios" className="bg-white py-24">
@@ -164,25 +165,16 @@ export default function CTAFinal() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={BOOKING_URL}
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white text-green-800 font-bold text-lg px-8 py-4 rounded-xl hover:bg-green-50 transition-all"
             >
               Reservar demo gratis →
             </a>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-green-900/50 border border-white/30 text-white font-semibold text-lg px-8 py-4 rounded-xl hover:bg-green-900 transition-all"
-            >
-              Probar el bot ahora
-            </a>
           </div>
-          {/* Nota de pie */}
           <p className="text-green-200/70 text-sm mt-6">
-            Sin tarjeta de crédito · Sin permanencias · Puesta en marcha en 48h
+            Sin permanencias · Puesta en marcha en 48h
           </p>
         </div>
 
@@ -192,10 +184,10 @@ export default function CTAFinal() {
             CloserIA es un producto de{" "}
             <strong className="text-gray-600">NexAutoIA</strong> ·{" "}
             <a
-              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hola@nexautoia.com"}`}
+              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "pabloqc.nex@nexautoia.com"}`}
               className="hover:text-gray-700 transition-colors"
             >
-              {process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hola@nexautoia.com"}
+              {process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "pabloqc.nex@nexautoia.com"}
             </a>
           </p>
         </div>
